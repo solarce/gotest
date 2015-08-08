@@ -1,9 +1,10 @@
 language: go
 sudo: false
 env:
-  - GO_V="1.5rc1"
-  - GO_ARCHIVE="$GO_V.linux-amd64.tar.gz"
-  - GO_DST="$HOME/go-$GO_V"
+  global:
+    - GO_V=1.5rc1
+    - GO_ARCHIVE=$GO_V.linux-amd64.tar.gz
+    - GO_DST=$HOME/go-$GO_V
 
 before_install:
   - mkdir $GO_DST
