@@ -1,13 +1,4 @@
 language: go
 sudo: false
-env:
-  global:
-    - GO_V=1.5rc1
-    - GO_ARCHIVE=$GO_V.linux-amd64.tar.gz
-    - GO_DST=$HOME/go-$GO_V
-
 before_install:
-  - mkdir $GO_DST
-  - curl -ssL https://storage.googleapis.com/golang/$GO_ARCHIVE -o $GO_DST/$GO_ARCHIVE
-  - tar xfz $GO_DST/$GO_ARCHIVE -C $GO_DST
-  - ls  $GO_DST
+  - eval "$(curl -sL https://raw.githubusercontent.com/solarce/gimme/master/gimme | GIMME_GO_VERSION=1.5rc1 bash)"
